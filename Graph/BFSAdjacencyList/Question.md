@@ -1,1 +1,1 @@
-To implement Breadth first search using linked list to create the graph. 
+To implement Breadth first search using adjacency list to create the graph. 

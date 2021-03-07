@@ -1,0 +1,1 @@
+To implement Kruskal's minimum spanning tree algorithm to find the shortest path.
