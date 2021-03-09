@@ -34,13 +34,13 @@ class Graph {
             }
             
             visitCheck[i] = 1;
+            q.pop();
             if(!q.empty()) {
-                cout<<q.front()<<" ";
-                q.pop();
+                // cout<<q.front()<<" ";
                 i = q.front();
             } 
-
-            res = check(i, visitCheck);
+            if(res == 1) return 1;
+            else if(res == 0 && !q.empty())  res = check(i, visitCheck);
             return res;
         }
         void cyclicCheck() {
@@ -54,7 +54,7 @@ class Graph {
             else cout<<"Not a cyclic graph";
 
         }
-};m,hk
+};
 
 
 int main() {
