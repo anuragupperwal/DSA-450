@@ -1,0 +1,1 @@
+To implement Prim's minimum spanning tree algorithm to find the shortest distance.
