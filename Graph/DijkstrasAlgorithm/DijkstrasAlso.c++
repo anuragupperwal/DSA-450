@@ -6,30 +6,9 @@ using namespace std;
 
 map <int, map<int, int> > graph;
 
-// class edge {
-//     public:
-//         int source, dest, wt, V, E;
-// };
-
-// void primsAlgo(edge graph[], int V, int E, int j) {
-//     int vertex[V], parent[V], wt[V];
-//     map <int, int> visitCheck;
-//     wt[j] = 0;
-//     parent[j] = -1;
-//     for(int i=0; i<V; ++i) {
-//         if(i != j) wt[i] = 999;
-//         vertex[i] = i;
-//     }
-//     for(int i=0; i<V; ++i) visitCheck[i] = 0;
-
-//     // for(int i=0; i<V; ++i) {
-//     // }
-// }
-
 int inputGraph(int V, int E, int count) {
     if(count<E) {
         int u, v, wt;
-        cout<<"Enter u, v and weight: ";
         cin>>u>>v>>wt;
         if(u<V && v<V) {
             graph[u][v] = wt;
@@ -72,8 +51,8 @@ void PrimsAlgo(int V, int E, int i) {
         
         for(int k=0; k<V; ++k) {
             if(graph[minVertex][k] != 0 && !visited[k]){
-                if(wt[k] > graph[minVertex][k]) {
-                    wt[k] = graph[minVertex][k];
+                if(wt[k] > graph[minVertex][k] + wt[minVertex]) {
+                    wt[k] = graph[minVertex][k] + wt[minVertex];
                     parent[k] = minVertex;
                 }
             }
@@ -82,10 +61,7 @@ void PrimsAlgo(int V, int E, int i) {
 
     //to print vertices of minimum spanning tree.
     for(int i=0; i<V; ++i) {
-        if(parent[i] != -1) {
-            if(parent[i] < i) cout<<"\n"<<parent[i]<<" - "<<i<<": "<<wt[i];
-            else cout<<"\n"<<i<<" - "<<parent[i]<<": "<<wt[i];
-        }
+        cout<<endl<<i<<": "<<wt[i];
     }
 }
 
@@ -99,15 +75,6 @@ int main() {
             graph[i][j] = 0;
         }
     }
-    // edge *graph = new edge[E];
-
-    // for(int i=0; i<E; ++i) {
-    //     int s, d, w;
-    //     cin>>s>>d>>w;
-    //     graph[i].source = s;
-    //     graph[i].dest = d;
-    //     graph[i].wt = w;
-    // }
     
     //Taking input for the graph.
     inputGraph(V, E, 0);
