@@ -1,1 +1,0 @@
-To implement the Bellman-Fords shortest path algorithm.
