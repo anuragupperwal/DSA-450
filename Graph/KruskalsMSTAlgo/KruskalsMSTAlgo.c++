@@ -8,6 +8,16 @@ class edge {
         int source, dest, wt;
 };
 
+void addEdge(edge g1[], int E) {
+    for(int i=0; i<E; ++i) {
+        int s, d, w;
+        cin>>s>>d>>w;
+        g1[i].source = s;
+        g1[i].dest = d;
+        g1[i].wt = w;
+    }
+}
+
 int compare(edge e1, edge e2) {
     return e1.wt < e2.wt;
 }
@@ -38,24 +48,16 @@ void KruskalsAlgo(edge g1[],int V,int E) {
             parent[sourceParent] = destinationParent;
         }
     }
-
     for(int i=0; i<V-1; i++) cout<<output[i].source<<" - "<<output[i].dest<<": "<<output[i].wt<<endl;
-
 }
 
 int main() {
     int V, E;
     cin>>V>>E;
     edge *g1 = new edge[E];
-cout<<"hmm: ";
-    for(int i=0; i<E; ++i) {
-        int s, d, w;
-        cin>>s>>d>>w;
-        g1[i].source = s;
-        g1[i].dest = d;
-        g1[i].wt = w;
-    }
-
+    cout<<"hmm: ";
+   
+    addEdge(g1, E);
     KruskalsAlgo(g1, V, E);
 
     return 0;

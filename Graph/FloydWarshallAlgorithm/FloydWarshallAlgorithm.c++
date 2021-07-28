@@ -60,7 +60,7 @@ int main() {
     g1.addEdge(0, 1, 9);
     g1.addEdge(0, 2, -4);
     g1.addEdge(1, 0, 6);
-    g1.addEdge(1, 3, 2);
+    g1.addEdge(1, 3, -2);
     g1.addEdge(2, 1, 5);
     g1.addEdge(3, 2, 1);
 

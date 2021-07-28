@@ -79,7 +79,7 @@ void PrimsAlgo(int V, int E, int i) {
             }
         }            
     } 
-
+ 
     //to print vertices of minimum spanning tree.
     for(int i=0; i<V; ++i) {
         if(parent[i] != -1) {

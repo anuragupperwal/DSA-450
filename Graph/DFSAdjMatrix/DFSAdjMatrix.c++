@@ -1,6 +1,6 @@
 #include<iostream>
 #include<map>
-#include "/Users/anuragupperwal/stdc++.h"
+#include "/Users/anuragupperwal/stdc++.h" //<bits/stdc++.h>
 
 using namespace std;
 

@@ -1,6 +1,6 @@
 #include<iostream>
 #include<map>
-#include "/Users/anuragupperwal/stdc++.h"
+#include "/Users/anuragupperwal/stdc++.h" //<bits/stdc++.h>
 
 using namespace std;
 
@@ -9,8 +9,7 @@ void graphInput(map<int, map<int, int> > &graphMap, int i, int j)  {
     graphMap[j][i] = 1;
 }
 
-int BFS(map<int, map<int, int> > graphMap, map<int, char> &visitCheck, vector <int> &rtn, queue <int> &q, int numOfVertices, int i) {
-    int k=0;   //
+int BFS(map<int, map<int, int> > graphMap, map<int, char> &visitCheck, queue <int> &q, int numOfVertices, int i) {
     if(i<=numOfVertices) {
         if(q.empty()) {
             q.push(i);
@@ -24,15 +23,12 @@ int BFS(map<int, map<int, int> > graphMap, map<int, char> &visitCheck, vector <i
                     visitCheck[j] = 'b';
                 }
             }
-            
         }
-        rtn.push_back(q.front());
+        cout<<q.front()<<" ";
         q.pop();
         if(!q.empty()){
-            i = q.front();
-            BFS(graphMap, visitCheck, rtn, q, numOfVertices, i);
-        }
-        return 0;   
+            BFS(graphMap, visitCheck, q, numOfVertices, q.front());
+        } 
     }
     return 0;
 }
@@ -40,7 +36,6 @@ int BFS(map<int, map<int, int> > graphMap, map<int, char> &visitCheck, vector <i
 int main() {
     map<int, map<int, int> > graphMap;
     map<int, char> visitCheck;
-    vector <int> rtn;
     queue <int> q;
 
     int numOfVertices=5;
@@ -58,11 +53,11 @@ int main() {
     for(int i=0; i<=numOfVertices; ++i) {
         visitCheck[i] = 'w';
     }
-    BFS(graphMap, visitCheck, rtn, q, numOfVertices, 1);
+    BFS(graphMap, visitCheck, q, numOfVertices, 1);
 
-    for(int i=0; i<rtn.size(); ++i) {
-        cout<<rtn[i]<<" ";
-    }
+    // for(int i=0; i<rtn.size(); ++i) {
+    //     cout<<rtn[i]<<" ";
+    // }
     return 0;
 }
 

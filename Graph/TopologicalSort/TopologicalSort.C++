@@ -52,6 +52,7 @@ int main() {
     g1.addEdge(5, 0);
     g1.addEdge(5, 2);
 
+    cout<<"Topological sort: ";
     g1.topologicalSort();
 
     return 0;

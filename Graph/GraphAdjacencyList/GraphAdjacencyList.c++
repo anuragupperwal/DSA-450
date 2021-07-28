@@ -1,12 +1,11 @@
 #include<iostream>
 #include<list>
 #include<iterator>
-#include<algorithm>
+// #include<algorithm>
 
 using namespace std;
 
 class Graph {
-
         int numOfVertices;
         list <int> *l;
     public:

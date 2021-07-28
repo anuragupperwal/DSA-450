@@ -1,6 +1,6 @@
 #include<iostream>
 #include<map>
-#include<cctype>
+// #include<cctype>
 
 using namespace std;
 
@@ -16,6 +16,9 @@ int GraphInput(int numOfNodes, int totalNodes, int count) {
             graphMap[i][j] = 1;
             graphMap[j][i] = 1;
         }
+        else {
+            cout<<"Out of bound!!\n";
+        }
         
         cout<<"Want to add more nodes? (Y - yes, N - no): ";
         cin>>conti;
@@ -23,7 +26,6 @@ int GraphInput(int numOfNodes, int totalNodes, int count) {
 
         return GraphInput(numOfNodes, totalNodes, ++count);
     }
-
     return 0;
 }
 
@@ -49,3 +51,42 @@ int main() {
     }
     return 0;
 }
+
+
+
+//Using class
+
+// class Graph {
+//         map <int, map<int, int> > graph;
+//         int V, E;
+//     public:
+//         Graph(int v, int e) {
+//             this->V = v;
+//             this->E = e;
+//         }
+//         void AdjMatrix() {
+//             int u, v;
+//             for(int i=0; i<E; ++i) {
+//                 cin>>u>>v;
+//                 if(u<=V && v<=V) {
+//                     graph[u][v] = 1;
+//                     graph[v][u] = 1;
+//                 }
+//             }
+//         }
+//         void print() {
+//             for(int i=1; i<=V; ++i) {
+//                 for(int j=1; j<=V; ++j) {
+//                     cout<<graph[i][j];
+//                 }
+//                 cout<<endl;
+//             }
+//         }
+// };
+
+// int main() {
+//     Graph g1(5, 7);
+//     g1.AdjMatrix();
+//     g1.print();
+//     return 0;
+// }
