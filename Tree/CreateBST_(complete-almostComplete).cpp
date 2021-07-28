@@ -12,7 +12,7 @@ class Node {
 
 class BST {
     public:
-        Node* addEdge(ll height, ll i, ll value, ll n){ //(int i) {            //I'm unable to understand how to take input recurrsively for a specific number of inputs.
+        Node* addEdge(ll height, ll i, ll value, ll n){
             Node* newNode = new Node;
             cout<<height<<" "<<i<<" \n";
             if(i<=height && value<=n){
