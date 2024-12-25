@@ -8,14 +8,14 @@ int GraphInput(map<int, map<int, int> > &graphMap, int numOfNodes, int totalElem
     if(count < totalElements) {
         int i, j;
         char conti;
-        cout<<"Enter adjacent elements: ";
+        // cout<<"Enter adjacent elements: ";
         cin>>i>>j;
         if(i<=numOfNodes && j<=numOfNodes) {
             graphMap[i][j] = 1;
             graphMap[j][i] = 1;
         }
         
-        cout<<"Enter again? (Y = yes, N = no: ";
+        // cout<<"Enter again? (Y = yes, N = no: ";
         cin>>conti;
         if(conti == 'n' || conti == 'N') return 0;
 
@@ -40,9 +40,8 @@ int DFS(map<int, map<int, int> > graphMap, map<int, char> &visitCheck, stack <in
         visitCheck[i] = 'b';
         cout<<s.top();
         s.pop();
-        if(!s.empty()) i=s.top();
-        else i = 0;
-        return i;
+        if(!s.empty()) return s.top();
+        else return 0;
     }
     return 0;
 }
@@ -74,7 +73,7 @@ int main() {
     //     }
     // }
 
-
+    cout<<"\n";
     for(int i=1; i<=numOfNodes; ++i) {
         for(int j=1; j<=numOfNodes; ++j) {
                 cout<<graphMap[i][j]<<" ";

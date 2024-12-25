@@ -56,37 +56,36 @@ int main() {
 
 //Using class
 
-// class Graph {
-//         map <int, map<int, int> > graph;
-//         int V, E;
+// class AdjMatrix {
+//         int v, e;
+//         map <int, map<int, int> > matrix;
 //     public:
-//         Graph(int v, int e) {
-//             this->V = v;
-//             this->E = e;
+//         AdjMatrix(int a, int b) {
+//             v = a; 
+//             e = b;
 //         }
-//         void AdjMatrix() {
-//             int u, v;
-//             for(int i=0; i<E; ++i) {
-//                 cin>>u>>v;
-//                 if(u<=V && v<=V) {
-//                     graph[u][v] = 1;
-//                     graph[v][u] = 1;
-//                 }
+//         void adjMat() {
+//             int a, b;
+//             for(int i=0; i<e; ++i) {
+//                 cin>>a>>b;
+//                 matrix[a][b] = 1;
+//                 matrix[b][a] = 1;
 //             }
 //         }
 //         void print() {
-//             for(int i=1; i<=V; ++i) {
-//                 for(int j=1; j<=V; ++j) {
-//                     cout<<graph[i][j];
+//             for(int i=0; i<v; ++i) {
+//                 for(int j=0; j<v; ++j) {
+//                     cout<<matrix[i][j]<<" ";
 //                 }
 //                 cout<<endl;
 //             }
 //         }
+
 // };
 
 // int main() {
-//     Graph g1(5, 7);
-//     g1.AdjMatrix();
-//     g1.print();
+//     AdjMatrix a1(5, 7);
+//     a1.adjMat();
+//     a1.print();
 //     return 0;
 // }
