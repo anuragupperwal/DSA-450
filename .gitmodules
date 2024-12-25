@@ -1,0 +1,3 @@
+[submodule "CodeChef"]
+	path = CodeChef
+	url = https://github.com/anuragupperwal/CodeChef.git
